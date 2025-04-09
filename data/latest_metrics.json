@@ -1,24 +1,24 @@
 {
-  "timestamp": "2025-04-09 13:00:45",
+  "timestamp": "2025-04-09 15:38:17",
   "cpu": {
     "percent": [
-      17.9,
+      15.4,
+      1.6,
+      17.5,
+      7.8,
+      12.7,
+      4.8,
       3.2,
-      7.9,
-      25.4,
-      21.9,
-      3.1,
-      30.2,
-      28.6
+      15.9
     ],
-    "average_percent": 17.275,
+    "average_percent": 9.8625,
     "count": 8,
     "times_percent": {
-      "user": 1.2,
-      "system": 0.8,
-      "idle": 97.9,
-      "interrupt": 0.2,
-      "dpc": 0.0
+      "user": 4.7,
+      "system": 7.4,
+      "idle": 85.0,
+      "interrupt": 1.5,
+      "dpc": 1.3
     },
     "frequency": {
       "current": 1910.0,
@@ -28,36 +28,36 @@
   },
   "memory": {
     "total": 16972546048,
-    "available": 5345726464,
-    "percent": 68.5,
-    "used": 11626819584,
-    "free": 5345726464,
+    "available": 5644836864,
+    "percent": 66.7,
+    "used": 11327709184,
+    "free": 5644836864,
     "swap": {
       "total": 6442450944,
-      "used": 506077184,
-      "free": 5936373760,
-      "percent": 7.9
+      "used": 423165952,
+      "free": 6019284992,
+      "percent": 6.6
     }
   },
   "disk": {
     "C:\\": {
       "total": 295416569856,
-      "used": 247862501376,
-      "free": 47554068480,
-      "percent": 83.9
+      "used": 248306159616,
+      "free": 47110410240,
+      "percent": 84.1
     },
     "D:\\": {
       "total": 214957027328,
-      "used": 29476364288,
-      "free": 185480663040,
+      "used": 29476573184,
+      "free": 185480454144,
       "percent": 13.7
     }
   },
   "network": {
-    "bytes_sent": 333021913,
-    "bytes_recv": 3370215098,
-    "packets_sent": 1388498,
-    "packets_recv": 2556188,
+    "bytes_sent": 370195139,
+    "bytes_recv": 3963657051,
+    "packets_sent": 1540084,
+    "packets_recv": 3065141,
     "errin": 0,
     "errout": 0,
     "dropin": 0,
@@ -65,74 +65,74 @@
   },
   "processes": [
     {
-      "cpu_percent": 654.2,
-      "memory_percent": 4.826618220290717e-05,
+      "cpu_percent": 683.3,
+      "pid": 0,
       "name": "System Idle Process",
-      "username": "NT AUTHORITY\\SYSTEM",
-      "pid": 0
+      "memory_percent": 4.826618220290717e-05,
+      "username": "NT AUTHORITY\\SYSTEM"
     },
     {
       "cpu_percent": 0.0,
-      "memory_percent": 0.588775023602163,
-      "name": "dwm.exe",
-      "username": null,
-      "pid": 4992
-    },
-    {
-      "cpu_percent": 10.5,
-      "memory_percent": 1.7255642799361341,
-      "name": "chrome.exe",
-      "username": "DESKTOP-DEV\\User",
-      "pid": 2984
-    },
-    {
-      "cpu_percent": 6.2,
-      "memory_percent": 0.3199082556408687,
-      "name": "Photos.exe",
-      "username": "DESKTOP-DEV\\User",
-      "pid": 4480
-    },
-    {
-      "cpu_percent": 0.0,
-      "memory_percent": 2.495602950801315,
+      "pid": 22208,
       "name": "Code.exe",
-      "username": "DESKTOP-DEV\\User",
-      "pid": 16156
+      "memory_percent": 2.4560246813949314,
+      "username": "DESKTOP-DEV\\User"
     },
     {
       "cpu_percent": 0.0,
-      "memory_percent": 1.4723357550085816,
-      "name": "chrome.exe",
-      "username": "DESKTOP-DEV\\User",
-      "pid": 20196
-    },
-    {
-      "cpu_percent": 4.5,
-      "memory_percent": 0.9042910566625673,
-      "name": "chrome.exe",
-      "username": "DESKTOP-DEV\\User",
-      "pid": 2056
-    },
-    {
-      "cpu_percent": 0.0,
-      "memory_percent": 0.5102700782491346,
-      "name": "sqlservr.exe",
-      "username": null,
-      "pid": 13444
-    },
-    {
-      "cpu_percent": 0.0,
-      "memory_percent": 1.3190906265143516,
+      "pid": 15052,
       "name": "Code.exe",
-      "username": "DESKTOP-DEV\\User",
-      "pid": 16064
+      "memory_percent": 1.112849229961329,
+      "username": "DESKTOP-DEV\\User"
     },
     {
       "cpu_percent": 0.0,
-      "memory_percent": 2.2430984186068064,
+      "pid": 16184,
+      "name": "Code.exe",
+      "memory_percent": 3.9177177432277723,
+      "username": "DESKTOP-DEV\\User"
+    },
+    {
+      "cpu_percent": 0.0,
+      "pid": 4448,
       "name": "MsMpEng.exe",
-      "username": null,
-      "pid": 4448
+      "memory_percent": 1.922200706230778,
+      "username": null
+    },
+    {
+      "cpu_percent": 0.0,
+      "pid": 4992,
+      "name": "dwm.exe",
+      "memory_percent": 0.41265172474375483,
+      "username": null
+    },
+    {
+      "cpu_percent": 80.1,
+      "pid": 12364,
+      "name": "python.exe",
+      "memory_percent": 0.29032108595048667,
+      "username": "DESKTOP-DEV\\User"
+    },
+    {
+      "cpu_percent": 0.0,
+      "pid": 4,
+      "name": "System",
+      "memory_percent": 0.04232944179194959,
+      "username": "NT AUTHORITY\\SYSTEM"
+    },
+    {
+      "cpu_percent": 12.5,
+      "pid": 9572,
+      "name": "Code.exe",
+      "memory_percent": 5.34383862877707,
+      "username": "DESKTOP-DEV\\User"
+    },
+    {
+      "cpu_percent": 0.0,
+      "pid": 3036,
+      "name": "MemCompression",
+      "memory_percent": 3.3968291048939974,
+      "username": null
     }
   ],
   "load_average": {
@@ -144,9 +144,9 @@
     "boot_time": "2025-03-20 11:15:42",
     "uptime": {
       "days": 20,
-      "hours": 1,
-      "minutes": 45,
-      "seconds": 3
+      "hours": 4,
+      "minutes": 22,
+      "seconds": 35
     }
   }
 }

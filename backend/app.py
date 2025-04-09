@@ -5,9 +5,11 @@ import os
 import time
 import json
 from collector import collect_metrics, save_metrics_to_file
+from alerts import AlertSystem
 
 app = Flask(__name__, static_folder='../frontend')
 CORS(app)  # Enable CORS for all routes
+alert_system = AlertSystem(config_file="../config/alerts.json", alerts_log="../data/alerts_log.json")
 
 # Create a scheduler
 scheduler = BackgroundScheduler()
@@ -15,7 +17,7 @@ job = None
 
 @app.route('/api/metrics', methods=['GET'])
 def get_metrics():
-    """Get the latest metrics from the file"""
+    """Get the latest metrics from the file and check for alerts"""
     latest_file = "../data/latest_metrics.json"
     all_file = "../data/metrics.json"
     
@@ -23,14 +25,41 @@ def get_metrics():
         try:
             with open(latest_file, 'r') as f:
                 metrics = json.load(f)
+                # Check for alerts
+                alerts = alert_system.check_alerts(metrics)
+                # Add alerts to response
+                metrics["alerts"] = alerts
                 return jsonify(metrics)
         except json.JSONDecodeError:
             pass
     
     # If latest file doesn't exist or is corrupt, collect metrics now
     metrics = collect_metrics()
+    alerts = alert_system.check_alerts(metrics)
+    metrics["alerts"] = alerts
     save_metrics_to_file(metrics)
     return jsonify(metrics)
+
+# Add these new API endpoints for alerts
+@app.route('/api/alerts', methods=['GET'])
+def get_alerts():
+    """Get alerts history"""
+    limit = request.args.get('limit', 50, type=int)
+    alerts = alert_system.get_alerts(limit)
+    return jsonify(alerts)
+
+@app.route('/api/alerts/config', methods=['GET'])
+def get_alerts_config():
+    """Get alerts configuration"""
+    config = alert_system.get_config()
+    return jsonify(config)
+
+@app.route('/api/alerts/config', methods=['POST'])
+def update_alerts_config():
+    """Update alerts configuration"""
+    new_config = request.json
+    updated_config = alert_system.update_config(new_config)
+    return jsonify(updated_config)
 
 @app.route('/api/metrics/history', methods=['GET'])
 def get_metrics_history():
