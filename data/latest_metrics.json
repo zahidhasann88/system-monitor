@@ -1,24 +1,24 @@
 {
-  "timestamp": "2025-04-09 12:37:21",
+  "timestamp": "2025-04-09 13:00:45",
   "cpu": {
     "percent": [
-      31.2,
-      20.6,
-      28.6,
-      42.9,
-      54.7,
-      31.7,
-      45.3,
-      23.8
+      17.9,
+      3.2,
+      7.9,
+      25.4,
+      21.9,
+      3.1,
+      30.2,
+      28.6
     ],
-    "average_percent": 34.85,
+    "average_percent": 17.275,
     "count": 8,
     "times_percent": {
-      "user": 20.1,
-      "system": 13.4,
-      "idle": 64.6,
-      "interrupt": 1.7,
-      "dpc": 0.2
+      "user": 1.2,
+      "system": 0.8,
+      "idle": 97.9,
+      "interrupt": 0.2,
+      "dpc": 0.0
     },
     "frequency": {
       "current": 1910.0,
@@ -28,36 +28,36 @@
   },
   "memory": {
     "total": 16972546048,
-    "available": 5699534848,
-    "percent": 66.4,
-    "used": 11273011200,
-    "free": 5699534848,
+    "available": 5345726464,
+    "percent": 68.5,
+    "used": 11626819584,
+    "free": 5345726464,
     "swap": {
       "total": 6442450944,
-      "used": 525246464,
-      "free": 5917204480,
-      "percent": 8.2
+      "used": 506077184,
+      "free": 5936373760,
+      "percent": 7.9
     }
   },
   "disk": {
     "C:\\": {
       "total": 295416569856,
-      "used": 247825301504,
-      "free": 47591268352,
+      "used": 247862501376,
+      "free": 47554068480,
       "percent": 83.9
     },
     "D:\\": {
       "total": 214957027328,
-      "used": 29476274176,
-      "free": 185480753152,
+      "used": 29476364288,
+      "free": 185480663040,
       "percent": 13.7
     }
   },
   "network": {
-    "bytes_sent": 330248723,
-    "bytes_recv": 3359910790,
-    "packets_sent": 1380012,
-    "packets_recv": 2539671,
+    "bytes_sent": 333021913,
+    "bytes_recv": 3370215098,
+    "packets_sent": 1388498,
+    "packets_recv": 2556188,
     "errin": 0,
     "errout": 0,
     "dropin": 0,
@@ -65,7 +65,7 @@
   },
   "processes": [
     {
-      "cpu_percent": 586.9,
+      "cpu_percent": 654.2,
       "memory_percent": 4.826618220290717e-05,
       "name": "System Idle Process",
       "username": "NT AUTHORITY\\SYSTEM",
@@ -73,66 +73,66 @@
     },
     {
       "cpu_percent": 0.0,
-      "memory_percent": 0.04114692032797836,
-      "name": "System",
-      "username": "NT AUTHORITY\\SYSTEM",
-      "pid": 4
-    },
-    {
-      "cpu_percent": 0.0,
-      "memory_percent": 0.2392795982709123,
-      "name": "",
+      "memory_percent": 0.588775023602163,
+      "name": "dwm.exe",
       "username": null,
-      "pid": 72
+      "pid": 4992
     },
     {
-      "cpu_percent": 0.0,
-      "memory_percent": 0.4009713086506513,
-      "name": "Registry",
-      "username": null,
-      "pid": 132
-    },
-    {
-      "cpu_percent": 0.0,
-      "memory_percent": 0.19241313535188942,
-      "name": "ApplicationFrameHost.exe",
+      "cpu_percent": 10.5,
+      "memory_percent": 1.7255642799361341,
+      "name": "chrome.exe",
       "username": "DESKTOP-DEV\\User",
-      "pid": 428
+      "pid": 2984
+    },
+    {
+      "cpu_percent": 6.2,
+      "memory_percent": 0.3199082556408687,
+      "name": "Photos.exe",
+      "username": "DESKTOP-DEV\\User",
+      "pid": 4480
     },
     {
       "cpu_percent": 0.0,
-      "memory_percent": 0.006805531690609911,
-      "name": "smss.exe",
-      "username": null,
-      "pid": 484
+      "memory_percent": 2.495602950801315,
+      "name": "Code.exe",
+      "username": "DESKTOP-DEV\\User",
+      "pid": 16156
     },
     {
       "cpu_percent": 0.0,
-      "memory_percent": 0.19041008879046878,
-      "name": "svchost.exe",
-      "username": null,
-      "pid": 552
+      "memory_percent": 1.4723357550085816,
+      "name": "chrome.exe",
+      "username": "DESKTOP-DEV\\User",
+      "pid": 20196
+    },
+    {
+      "cpu_percent": 4.5,
+      "memory_percent": 0.9042910566625673,
+      "name": "chrome.exe",
+      "username": "DESKTOP-DEV\\User",
+      "pid": 2056
     },
     {
       "cpu_percent": 0.0,
-      "memory_percent": 0.032700338442469605,
-      "name": "csrss.exe",
+      "memory_percent": 0.5102700782491346,
+      "name": "sqlservr.exe",
       "username": null,
-      "pid": 672
+      "pid": 13444
     },
     {
       "cpu_percent": 0.0,
-      "memory_percent": 0.024133091101453584,
-      "name": "fontdrvhost.exe",
-      "username": null,
-      "pid": 700
+      "memory_percent": 1.3190906265143516,
+      "name": "Code.exe",
+      "username": "DESKTOP-DEV\\User",
+      "pid": 16064
     },
     {
       "cpu_percent": 0.0,
-      "memory_percent": 0.036899496294122536,
-      "name": "wininit.exe",
+      "memory_percent": 2.2430984186068064,
+      "name": "MsMpEng.exe",
       "username": null,
-      "pid": 764
+      "pid": 4448
     }
   ],
   "load_average": {
@@ -145,8 +145,8 @@
     "uptime": {
       "days": 20,
       "hours": 1,
-      "minutes": 21,
-      "seconds": 38
+      "minutes": 45,
+      "seconds": 3
     }
   }
 }
