@@ -1,0 +1,53 @@
+# Python bytecode files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Virtual environment directories
+venv/
+ENV/
+env/
+*.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# IDE/editor configuration files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Test or coverage reports
+nosetests.xml
+coverage.xml
+*.cover
+*.tox/
+*.nox/
+*.coverage
+*.hypothesis/
+*.pytest_cache/
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+
+# MySQL database files
+*.sql
+*.sqlite
+
+# Logs
+*.log
+
+# Secrets and credentials
+*.env
+*.config
+
+# Docker
+.docker/
+
+# macOS Finder files
+.DS_Store

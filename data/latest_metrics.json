@@ -1,0 +1,152 @@
+{
+  "timestamp": "2025-04-09 12:37:21",
+  "cpu": {
+    "percent": [
+      31.2,
+      20.6,
+      28.6,
+      42.9,
+      54.7,
+      31.7,
+      45.3,
+      23.8
+    ],
+    "average_percent": 34.85,
+    "count": 8,
+    "times_percent": {
+      "user": 20.1,
+      "system": 13.4,
+      "idle": 64.6,
+      "interrupt": 1.7,
+      "dpc": 0.2
+    },
+    "frequency": {
+      "current": 1910.0,
+      "min": 0.0,
+      "max": 2112.0
+    }
+  },
+  "memory": {
+    "total": 16972546048,
+    "available": 5699534848,
+    "percent": 66.4,
+    "used": 11273011200,
+    "free": 5699534848,
+    "swap": {
+      "total": 6442450944,
+      "used": 525246464,
+      "free": 5917204480,
+      "percent": 8.2
+    }
+  },
+  "disk": {
+    "C:\\": {
+      "total": 295416569856,
+      "used": 247825301504,
+      "free": 47591268352,
+      "percent": 83.9
+    },
+    "D:\\": {
+      "total": 214957027328,
+      "used": 29476274176,
+      "free": 185480753152,
+      "percent": 13.7
+    }
+  },
+  "network": {
+    "bytes_sent": 330248723,
+    "bytes_recv": 3359910790,
+    "packets_sent": 1380012,
+    "packets_recv": 2539671,
+    "errin": 0,
+    "errout": 0,
+    "dropin": 0,
+    "dropout": 0
+  },
+  "processes": [
+    {
+      "cpu_percent": 586.9,
+      "memory_percent": 4.826618220290717e-05,
+      "name": "System Idle Process",
+      "username": "NT AUTHORITY\\SYSTEM",
+      "pid": 0
+    },
+    {
+      "cpu_percent": 0.0,
+      "memory_percent": 0.04114692032797836,
+      "name": "System",
+      "username": "NT AUTHORITY\\SYSTEM",
+      "pid": 4
+    },
+    {
+      "cpu_percent": 0.0,
+      "memory_percent": 0.2392795982709123,
+      "name": "",
+      "username": null,
+      "pid": 72
+    },
+    {
+      "cpu_percent": 0.0,
+      "memory_percent": 0.4009713086506513,
+      "name": "Registry",
+      "username": null,
+      "pid": 132
+    },
+    {
+      "cpu_percent": 0.0,
+      "memory_percent": 0.19241313535188942,
+      "name": "ApplicationFrameHost.exe",
+      "username": "DESKTOP-DEV\\User",
+      "pid": 428
+    },
+    {
+      "cpu_percent": 0.0,
+      "memory_percent": 0.006805531690609911,
+      "name": "smss.exe",
+      "username": null,
+      "pid": 484
+    },
+    {
+      "cpu_percent": 0.0,
+      "memory_percent": 0.19041008879046878,
+      "name": "svchost.exe",
+      "username": null,
+      "pid": 552
+    },
+    {
+      "cpu_percent": 0.0,
+      "memory_percent": 0.032700338442469605,
+      "name": "csrss.exe",
+      "username": null,
+      "pid": 672
+    },
+    {
+      "cpu_percent": 0.0,
+      "memory_percent": 0.024133091101453584,
+      "name": "fontdrvhost.exe",
+      "username": null,
+      "pid": 700
+    },
+    {
+      "cpu_percent": 0.0,
+      "memory_percent": 0.036899496294122536,
+      "name": "wininit.exe",
+      "username": null,
+      "pid": 764
+    }
+  ],
+  "load_average": {
+    "1min": 0,
+    "5min": 0,
+    "15min": 0
+  },
+  "system": {
+    "boot_time": "2025-03-20 11:15:42",
+    "uptime": {
+      "days": 20,
+      "hours": 1,
+      "minutes": 21,
+      "seconds": 38
+    }
+  }
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Monitoring Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-server me-2"></i>
+                System Monitor
+            </a>
+            <div class="d-flex">
+                <button id="collectBtn" class="btn btn-primary me-2">
+                    <i class="fas fa-sync-alt me-2"></i>Collect Now
+                </button>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="scheduleDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-clock me-2"></i>Schedule
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="scheduleDropdown">
+                        <li><a class="dropdown-item schedule-btn" data-interval="10" href="#">Every 10 seconds</a></li>
+                        <li><a class="dropdown-item schedule-btn" data-interval="30" href="#">Every 30 seconds</a></li>
+                        <li><a class="dropdown-item schedule-btn" data-interval="60" href="#">Every minute</a></li>
+                        <li><a class="dropdown-item schedule-btn" data-interval="300" href="#">Every 5 minutes</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" id="stopScheduleBtn" href="#">Stop scheduling</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-md-12 mb-4">
+                <div class="alert alert-info" role="alert" id="statusAlert">
+                    <i class="fas fa-info-circle me-2"></i>
+                    System monitoring active. Click "Collect Now" to get current metrics or set up a schedule.
+                </div>
+            </div>
+            
+            <!-- System Overview -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-desktop me-2"></i>System Overview
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-clock me-2"></i>Uptime</h6>
+                                <p id="systemUptime">Loading...</p>
+                                
+                                <h6><i class="fas fa-microchip me-2"></i>CPU</h6>
+                                <p id="cpuInfo">Loading...</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-weight-hanging me-2"></i>Load Average</h6>
+                                <p id="loadAvg">Loading...</p>
+                                
+                                <h6><i class="fas fa-memory me-2"></i>Memory</h6>
+                                <p id="memInfo">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CPU Usage -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-danger text-white">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-microchip me-2"></i>CPU Usage
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="progress-stacked mb-3" id="cpuProgressContainer">
+                            <div class="progress" role="progressbar" style="width: 100%">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" style="width: 0%">0%</div>
+                            </div>
+                        </div>
+                        <div id="cpuCoresContainer">
+                            <p class="text-center">Loading CPU core information...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Memory Usage -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-memory me-2"></i>Memory Usage
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <h6>RAM</h6>
+                        <div class="progress mb-3">
+                            <div id="ramProgress" class="progress-bar bg-success" role="progressbar" style="width: 0%">0%</div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <small class="text-muted">Total: <span id="ramTotal">0 GB</span></small>
+                            </div>
+                            <div class="col-md-4">
+                                <small class="text-muted">Used: <span id="ramUsed">0 GB</span></small>
+                            </div>
+                            <div class="col-md-4">
+                                <small class="text-muted">Free: <span id="ramFree">0 GB</span></small>
+                            </div>
+                        </div>
+                        
+                        <h6>Swap</h6>
+                        <div class="progress mb-3">
+                            <div id="swapProgress" class="progress-bar bg-warning" role="progressbar" style="width: 0%">0%</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <small class="text-muted">Total: <span id="swapTotal">0 GB</span></small>
+                            </div>
+                            <div class="col-md-4">
+                                <small class="text-muted">Used: <span id="swapUsed">0 GB</span></small>
+                            </div>
+                            <div class="col-md-4">
+                                <small class="text-muted">Free: <span id="swapFree">0 GB</span></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disk Usage -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-hdd me-2"></i>Disk Usage
+                        </h5>
+                    </div>
+                    <div class="card-body" id="diskUsage">
+                        <p class="text-center">Loading disk information...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Network Usage -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-network-wired me-2"></i>Network Usage
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-upload me-2"></i>Sent</h6>
+                                <p id="netSent">Loading...</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-download me-2"></i>Received</h6>
+                                <p id="netRecv">Loading...</p>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-exclamation-triangle me-2"></i>Errors</h6>
+                                <p>In: <span id="netErrIn">0</span> / Out: <span id="netErrOut">0</span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-ban me-2"></i>Dropped</h6>
+                                <p>In: <span id="netDropIn">0</span> / Out: <span id="netDropOut">0</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Top Processes -->
+            <div class="col-md-12 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-tasks me-2"></i>Top Processes
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>PID</th>
+                                        <th>Name</th>
+                                        <th>User</th>
+                                        <th>CPU %</th>
+                                        <th>Memory %</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="processesTable">
+                                    <tr>
+                                        <td colspan="5" class="text-center">Loading processes...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-dark text-white">
+        <div class="container text-center">
+            <span>System Monitoring Tool | Last Update: <span id="lastUpdate">Never</span></span>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

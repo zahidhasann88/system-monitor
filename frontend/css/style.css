@@ -1,0 +1,70 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container-fluid {
+    flex: 1;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.card {
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.schedule-active {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(13, 110, 253, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
+    }
+}
+
+#collectBtn:active {
+    transform: scale(0.95);
+}
+
+.progress {
+    height: 25px;
+}
+
+.cpu-core-progress {
+    height: 15px;
+    margin-bottom: 10px;
+}
+
+.cpu-core-label {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+}
+
+#lastUpdate {
+    font-weight: bold;
+}
+
+.alert {
+    margin-bottom: 0;
+}
+
+.chart-container {
+    position: relative;
+    height: 200px;
+    width: 100%;
+}
