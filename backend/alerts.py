@@ -1,5 +1,3 @@
-# Create a new file named alerts.py in the backend folder
-
 import json
 import os
 from datetime import datetime

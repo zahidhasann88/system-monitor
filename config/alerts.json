@@ -1,0 +1,22 @@
+{
+  "cpu": {
+    "enabled": true,
+    "threshold": 80,
+    "duration": 2
+  },
+  "memory": {
+    "enabled": true,
+    "threshold": 90,
+    "duration": 2
+  },
+  "disk": {
+    "enabled": true,
+    "threshold": 85,
+    "duration": 1
+  },
+  "swap": {
+    "enabled": true,
+    "threshold": 80,
+    "duration": 2
+  }
+}
