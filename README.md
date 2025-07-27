@@ -1,6 +1,6 @@
 # System Monitor
 
-A lightweight web-based system monitoring application built with Flask and JavaScript that provides real-time insights into your system's performance.
+A web-based system monitoring application built with Flask and JavaScript that provides real-time insights into the performance of the machine it's running on. It tracks metrics such as CPU usage, memory consumption, disk activity, and system uptime in real time through a clean and interactive interface.
 
 ## Features
 
